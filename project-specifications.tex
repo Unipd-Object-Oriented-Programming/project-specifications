@@ -24,7 +24,7 @@
 % Heading
 \title{Specifica Progetto di Laboratorio}
 \author{Programmazione ad Oggetti}
-\date{a.a. 2024/25}
+\date{a.a. 2025/26}
 
 %-----------------------------------------------------------------------
 % Document
@@ -33,13 +33,13 @@
 
 %-----------------------------------------------------------------------
 \section{Introduzione}
-L'obiettivo del progetto è sviluppare un sistema di gestione per una biblioteca che supporti diversi tipi di media, come libri, film e articoli di riviste, utilizzando il linguaggio di programmazione C++ e il framework \href{https://www.qt.io/?hsLang=en}{Qt} per la creazione di un'interfaccia grafica utente (GUI). L'applicazione deve permettere agli utenti di gestire la collezione multimediale, ovvero aggiungere, modificare e rimuovere media esistenti, nonché visualizzare le informazioni di ciascun tipo di media in un'interfaccia chiara e intuitiva.
+L'obiettivo del progetto è sviluppare un'applicazione per la gestione di attività personali, come impegni, eventi, scadenze o promemoria, utilizzando il linguaggio di programmazione C++ e il framework \href{https://www.qt.io/?hsLang=en}{Qt} per la creazione dell'interfaccia grafica utente (GUI).
 
-Ogni tipo di media sarà rappresentato da una classe derivata da una classe base comune. Gli utenti dell'applicazione dovranno essere in grado di cercare, creare, visualizzare, modificare e cancellare i media, interagendo con i loro attributi specifici, come ad esempio l'autore, l'anno di pubblicazione, o il regista.
+L'applicazione dovrà permettere agli utenti di gestire un elenco di attività, consentendo di creare, modificare, eliminare, cercare e visualizzare i diversi tipi di attività, ognuna delle quali dovrà possedere attributi specifici. Ogni tipo di attività sarà rappresentato da una classe derivata da una classe base comune, che descrive gli attributi e i comportamenti condivisi.
 
-Il progetto potrà essere sviluppato da un \textbf{singolo studente} oppure da una \textbf{coppia di studenti} e dovrà richiedere \textbf{approssimativamente 40 ore di lavoro} complessivo individuale.
+L'interfaccia grafica dovrà consentire all'utente di navigare tra le diverse viste (lista delle attività, dettaglio di una singola attività, schermata di creazione e modifica) e di gestire le operazioni principali attraverso pulsanti, menu o scorciatoie. È possibile adottare pattern architetturali come il \emph{Model-View-Controller} o \emph{Model-View} per la progettazione della GUI. Il framework Qt offre una documentazione completa e dettagliata che sarà la principale guida di riferimento per lo sviluppo dell'interfaccia grafica. Si incoraggia anche l'applicazione di design pattern comunemente utilizzati in C++ per migliorare la manutenibilità e l'estensibilità del progetto.
 
-La GUI potrà ispirarsi liberamente sia ad applicazioni desktop che a sistemi mobile. È possibile adottare pattern architetturali come il \emph{Model-View-Controller} o \emph{Model-View} per la progettazione della GUI. Il framework Qt offre una documentazione completa e dettagliata che sarà la principale guida di riferimento per lo sviluppo dell'interfaccia grafica. Si incoraggia anche l'applicazione di design pattern comunemente utilizzati in C++ per migliorare la manutenibilità e l'estensibilità del progetto.
+Il progetto potrà essere svolto \textbf{individualmente} o \textbf{in coppia}, e dovrà richiedere \textbf{approssimativamente 40 ore di lavoro} individuale.
 
 La valutazione del progetto e il voto dell'esame scritto saranno calcolati separatamente ed entrambi concorreranno al voto finale dell'esame. In linea generale, il voto dell'esame scritto avrà un peso maggiore, ma la valutazione del progetto potrà influire positivamente o negativamente sul risultato finale. Gli studenti avranno la possibilità di ripresentare il progetto mantenendo il voto dell'esame scritto, e viceversa. Tuttavia, la valutazione del progetto sarà effettuata solo per gli studenti che abbiano superato l'esame scritto e si siano iscritti correttamente nella lista Uniweb per la registrazione del voto finale.
 
@@ -52,17 +52,17 @@ Il progetto deve obbligatoriamente soddisfare i seguenti vincoli:
  \item essere un \textbf{lavoro originale} dello studente o della coppia di studenti
  \item essere interamente \textbf{scritto in C++}
  \item prevedere un'\textbf{interfaccia grafica} realizzata in Qt
- \item \textbf{compilare senza errori} sulla macchina virtuale fornita (sono tollerati, sebbene generalmente penalizzati, i \emph{warning} durante la compilazione)
+ \item \textbf{compilare senza errori} sul container \href{https://www.docker.com/}{Docker} fornito (sono tollerati, sebbene generalmente penalizzati, i \emph{warning} durante la compilazione)
  \item rispettare i principi di \textbf{incapsulamento} e \textbf{\emph{information hiding}} della programmazione orientata agli oggetti: una classe deve rappresentare un singolo concetto e includere attributi e metodi con livelli di visibilità appropriati
- \item mantenere una \textbf{separazione netta} tra il modello logico e l'interfaccia grafica, ovvero il codice del modello deve essere riutilizzabile senza dipendenze dall'interfaccia; è consentito che il modello utilizzi strumenti Qt non legati all'interfaccia, come le funzioni di I/O o le classi per la gestione di JSON
+ \item mantenere una \textbf{separazione netta} tra il modello logico e l'interfaccia grafica, ovvero il codice del modello deve essere riutilizzabile senza dipendenze dall'interfaccia; è consentito che il modello utilizzi strumenti Qt non legati all'interfaccia, come le funzioni di I/O o le classi per la gestione di JSON, e l'interfaccia grafica può (e dovrebbe) utilizzare le classi del modello
  \item eseguire in maniera \textbf{efficiente e robusta}, senza errori a \emph{runtime}
- \item utilizzare il \textbf{polimorfismo in maniera non banale}; esempi di utilizzo \emph{banale} sono distruttori virtuali o semplici \emph{getter}. Un utilizzo \emph{non banale} include metodi che si comportano in maniera profondamente diversa in base al tipo dinamico dell'oggetto invocante, come la visualizzazione di interfacce o azioni specifiche per ogni tipo di media; si incoraggia l'utilizzo di uno o più \emph{design pattern}, in quanto questi richiedono spesso un uso approfondito del polimorfismo
+ \item utilizzare il \textbf{polimorfismo in maniera non banale}; esempi di utilizzo \emph{banale} sono distruttori virtuali o semplici \emph{getter}. Un utilizzo \emph{non banale} include metodi che si comportano in maniera profondamente diversa in base al tipo dinamico dell'oggetto invocante, come la visualizzazione di interfacce o azioni specifiche per ogni tipo di attività; si incoraggia l'utilizzo di uno o più \emph{design pattern}, in quanto questi richiedono spesso un uso approfondito del polimorfismo
  \item \textbf{non utilizzare metodi virtuali come \emph{getType}} che restituiscono una stringa rappresentate il tipo dell'oggetto per gestire il controllo di flusso in sostituzione al polimorfismo; l'uso di tali metodi è consentito unicamente se finalizzati a mostrare effettivamente una semplice stringa
- \item implementare una \textbf{gerarchia di classi} per i media con almeno \textbf{tre classi concrete} (ad esempio per libri, film e articoli) per i progetti svolti singolarmente, o almeno \textbf{cinque classi concrete} per i progetti svolti in coppia; in ogni caso le classi dovranno presentare differenze significative, quali attributi e metodi diversi
- \item consentire la \textbf{creazione, ricerca, modifica e cancellazione} di media tramite l'interfaccia grafica; le procedure di creazione e modifica, in particolare, devono tenere conto dei differenti attributi delle classi concrete
- \item implementare la \textbf{persistenza dei dati} per i media in un file locale in almeno \textbf{un formato strutturato} (ad esempio JSON o XML) per i progetti di individuali, o in almeno \textbf{due formati strutturati} per i progetti di coppia
- \item consentire il \textbf{salvataggio e il caricamento} dei file contenenti i dati dei media attraverso finestre di dialogo grafiche, evitando percorsi cablati nel codice sorgente
- \item gestire la \textbf{navigazione tra le diverse schermate} all'interno della stessa finestra, evitando l'apertura non necessaria di molteplici finestre; fanno eccezione finestre di dialogo quali la selezione dei file, modali ed eventuali popup di conferma
+ \item implementare una \textbf{gerarchia di classi} per le attività con almeno \textbf{tre classi concrete} per i progetti svolti singolarmente, o almeno \textbf{cinque classi concrete} per i progetti svolti in coppia; in ogni caso le classi dovranno presentare differenze significative, quali attributi e metodi diversi
+ \item consentire la \textbf{ricerca, creazione, visualizzazione, modifica e cancellazione} di attività tramite l'interfaccia grafica; le procedure di creazione e modifica, in particolare, devono tenere conto dei differenti attributi delle classi concrete
+ \item implementare la \textbf{persistenza dei dati} per le attività in un file locale in almeno \textbf{un formato strutturato} (ad esempio JSON o XML) per i progetti di individuali, o in almeno \textbf{due formati strutturati} per i progetti di coppia
+ \item consentire, in ogni momento durante l'esecuzione, il \textbf{salvataggio e il caricamento} dei file contenenti i dati delle attività attraverso finestre di dialogo grafiche, evitando percorsi cablati nel codice sorgente
+ \item gestire la \textbf{navigazione tra le diverse schermate} all'interno della stessa finestra, evitando l'apertura non necessaria di molteplici finestre; fanno eccezione finestre di dialogo quali la selezione dei file, piccole modali informative ed eventuali popup di conferma; in particolare le schermate di creazione e modifica delle attività devono prevedere schermate apposite all'interno della finestra principale
  \item essere corredato di una \textbf{relazione} in formato PDF, in lingua italiana o inglese, di massimo 8 pagine con testo a 10pt, che riporti:
  \begin{enumerate}
   \item nome, cognome e numero di matricola di tutti i componenti del gruppo (o del singolo autore)
@@ -87,8 +87,7 @@ La Fig.~\ref{fig:skeleton} mostra un esempio di struttura dell'interfaccia grafi
 
 %-----------------------------------------------------------------------
 \section{Consegna}
-La consegna avverrà tramite il Moodle del corso, all'interno del quale saranno attivate cinque sessioni di consegna del progetto per gli altrettanti appelli d'esame previsti durante l'anno accademico (due sessioni di consegna a gennaio/febbraio 2025, due sessioni di consegna a giugno/luglio 2025, 
-una sessione di consegna a settembre 2025). Si dovrà consegnare un unico archivio in formato zip della dimensione massima di 256MB attraverso l'apposita pagina Moodle. \textbf{Non saranno accettati tentativi di consegna con modalità diverse o formati che non siano zip}. La cartella compressa dovrà contenere:
+La consegna avverrà tramite il Moodle del corso, all'interno del quale saranno attivate cinque sessioni di consegna del progetto per gli altrettanti appelli d'esame previsti durante l'anno accademico (due sessioni di consegna a gennaio/febbraio 2026, due sessioni di consegna a giugno/luglio 2026, una sessione di consegna a settembre 2026). Si dovrà consegnare un unico archivio in formato zip della dimensione massima di 256MB attraverso l'apposita pagina Moodle. \textbf{Non saranno accettati tentativi di consegna con modalità diverse o formati che non siano zip}. La cartella compressa dovrà contenere:
 \begin{itemize}
  \item la relazione in formato PDF
  \item una sottocartella con i file sorgente del progetto (.h, .cpp, .pro, eventuali sottocartelle) ed eventuali file multimediali necessari (immagini, icone, ecc.)
@@ -113,11 +112,11 @@ La qualità della relazione, pur avendo un'incidenza minore, verrà valutata sul
 
 Ciascuna finestra di consegna presente nella pagina Moodle del corso mostrerà una data limite: \textbf{non sarà in alcun modo possibile consegnare oltre tale data o con modalità diverse da quelle previste}.
 
-La valutazione del progetto è \textbf{valida per l'intero anno accademico} e fino a che non viene (ri)consegnato un progetto.
+La valutazione del progetto consegnato in una delle cinque sessioni d'esame è \textbf{valida solamente per quella sessione}; se in quella sessione non verrà registrato il voto finale, il progetto dovrà essere riconsegnato in una successiva sessione per ottenere una nuova valutazione, eventualmente senza modifiche.
 
 La valutazione è accompagnata da un \emph{feedback} testuale che motiva la valutazione ed evidenzia i punti di forza e debolezza del progetto. È possibile riconsegnare un progetto per ottenere una nuova valutazione, che potrebbe anche essere peggiorativa, tuttavia se si seguono le indicazioni fornite dal \emph{feedback} sarà generalmente migliorativa. La valutazione è \emph{idempotente}: riconsegnare lo stesso progetto senza modifiche produrrà esattamente la stessa valutazione. Se un progetto viene riconsegnato senza la sezione riportante le modifiche rispetto alla consegna precedente nella relazione, questo non verrà valutato nuovamente e riceverà automaticamente la stessa valutazione della consegna precedente.
 
-Consegnare un progetto svolto anche parzialmente da altri (con o senza il loro consenso) oppure generato da sistemi automatici comporta automaticamente l'insufficienza.
+Consegnare un progetto svolto anche parzialmente da altri (con o senza il loro consenso) oppure generato da sistemi automatici come LLM (ChatGPT, DeepSeek, Claude, ecc.) comporta automaticamente l'insufficienza.
 
 \begin{figure}[ht]
  \centering
